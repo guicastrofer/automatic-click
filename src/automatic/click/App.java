@@ -1,5 +1,6 @@
 package automatic.click;
 
+import java.io.IOException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -11,25 +12,40 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
-public class App extends Application {
+public class App extends Application{
 
+	
+	String teste = "Teste";
+	
 	@FXML
 	private Button clickButton;
 	@FXML
-	private Button cancelButton;
-	public int flag;
+	private Button moveButton;
+	@FXML
+	private Label label;
+	
 
+	
+	
+	
 	ScheduledExecutorService t = Executors.newScheduledThreadPool(1);
-	TaskAutomateClick mTask = new TaskAutomateClick();
+	TaskAutomateClick aTask = new TaskAutomateClick();
+	TaskAutomateMove mTask = new TaskAutomateMove();
+	
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		Parent root = FXMLLoader.load(getClass().getResource("File.fxml"));
+		Scene scene = new Scene(root, 400, 200);
 		primaryStage.setTitle("Automate Click");
-		primaryStage.setScene(new Scene(root, 350, 100));
+		primaryStage.setScene(scene);
 		primaryStage.show();
+		
 	}
 
 	public static void main(String[] args) {
@@ -37,15 +53,28 @@ public class App extends Application {
 	}
 
 	@FXML
-	protected void startCommand(ActionEvent event) {
+	protected void startClick(ActionEvent event) {
+		label.setText("Running..."); 
+		t.scheduleAtFixedRate(aTask, 0, 1, TimeUnit.SECONDS);
+	}
+
+	@FXML
+	protected void startMove(ActionEvent event) {
+		label.setText("Running...");
 		t.scheduleAtFixedRate(mTask, 0, 1, TimeUnit.SECONDS);
 	}
 
 	@FXML
-	protected void stopCommand(ActionEvent event) {
-		System.out.println("Stop");
-		t.shutdown();
-		t.shutdownNow();
+	private void keyPressed(KeyEvent keyEvent) throws IOException {
+	    if (keyEvent.getCode() == KeyCode.P) {
+	    	System.out.println("Stop!");
+			t.shutdown();
+			Parent root = FXMLLoader.load(getClass().getResource("File.fxml"));
+			new Scene(root, 400, 200);
+			t=Executors.newScheduledThreadPool(1);
+			label.setText("Stop");
+	    }
 	}
-
+	
+	
 }
