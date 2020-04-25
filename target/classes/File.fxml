@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 
-<VBox fx:controller="automatic.click.App"
+<VBox fx:controller="com.automatic.click.App"
           xmlns:fx="http://javafx.com/fxml" alignment="center" onKeyPressed="#keyPressed">
     <padding>
         <Insets top="20" bottom="20" left="10" right="10"/>

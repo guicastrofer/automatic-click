@@ -18,9 +18,6 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 public class App extends Application{
-
-	
-	String teste = "Teste";
 	
 	@FXML
 	private Button clickButton;
@@ -36,7 +33,7 @@ public class App extends Application{
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("File.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/File.fxml"));
 		Parent root = (Parent)loader.load();
 		Scene scene = new Scene(root, 400, 200);
 		primaryStage.setTitle("Automate Click");
@@ -66,7 +63,7 @@ public class App extends Application{
 	    if (keyEvent.getCode() == KeyCode.P) {
 	    	System.out.println("Stop!");
 			t.shutdown();
-			Parent root = FXMLLoader.load(getClass().getResource("File.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/File.fxml"));
 			new Scene(root, 400, 200);
 			t=Executors.newScheduledThreadPool(1);
 			label.setText("Stop");

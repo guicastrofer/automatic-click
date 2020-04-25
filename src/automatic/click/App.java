@@ -40,7 +40,7 @@ public class App extends Application{
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("File.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/File.fxml"));
 		Scene scene = new Scene(root, 400, 200);
 		primaryStage.setTitle("Automate Click");
 		primaryStage.setScene(scene);
@@ -69,7 +69,7 @@ public class App extends Application{
 	    if (keyEvent.getCode() == KeyCode.P) {
 	    	System.out.println("Stop!");
 			t.shutdown();
-			Parent root = FXMLLoader.load(getClass().getResource("File.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/File.fxml"));
 			new Scene(root, 400, 200);
 			t=Executors.newScheduledThreadPool(1);
 			label.setText("Stop");
