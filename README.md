@@ -12,11 +12,12 @@ A Auto Mouse Mover and Clicker using Java FX 11.
 <h2>Steps to Setup</h2>
 <ul>
 <li>Clone the application:</li>
-
-git clone https://github.com/guicastrofer/automatic-click
+</ul>
+<h6>git clone https://github.com/guicastrofer/automatic-click</h6>
+<ul>
 <li>Build and run the app using maven:</li>
-
-cd automatic-click
-mvn clean compile
-mvn package
-java -jar target/automate-click-0.0.1-SNAPSHOT.jar
+</ul>
+<h6>cd automatic-click</h6>
+<h6>mvn clean compile</h6>
+<h6>mvn package</h6>
+<h6>java -jar target/automate-click-0.0.1-SNAPSHOT.jar</h6>
