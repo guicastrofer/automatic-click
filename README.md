@@ -1,6 +1,6 @@
 #
 <h1>Automatic Click and Move Application</h1>
-A Auto Mouse Mover and Clicker using Java FX.
+A Auto Mouse Mover and Clicker using Java FX 11.
 
 <h2>Requirements</h2>
 <ol>
