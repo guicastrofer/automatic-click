@@ -1,5 +1,5 @@
 #
-<h1>Automatic Click Application</h1>
+<h1>Automatic Click and Move Application</h1>
 A Auto Mouse Mover and Clicker using Java FX.
 
 <h2>Requirements</h2>
