@@ -4,7 +4,7 @@ A Auto Mouse Mover and Clicker using Java FX.
 
 <h2>Requirements</h2>
 <ol>
-<li>Java - 1.11.x </li>
+<li>Java - 1.8.x (Only on homolog branch)</li>
 <li>Maven - 3.x.x</li>
 </ol>
 
