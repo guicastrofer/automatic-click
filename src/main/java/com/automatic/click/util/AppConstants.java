@@ -1,10 +1,12 @@
 package com.automatic.click.util;
 
+import javafx.scene.input.KeyCode;
+
 public class AppConstants {
 	
-	public static final String P_KEY="P ";
+	public static final String P_KEY=KeyCode.P.toString();
 	
-	public static final String PATH_FXHTML="/view/File.fxml ";
+	public static final String PATH_FXHTML="/view/File.fxml";
 	
 	public static final String AUTOMATE_CLICK="Automatic Click ";
 	

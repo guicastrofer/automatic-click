@@ -8,7 +8,6 @@ import java.util.concurrent.TimeUnit;
 import org.apache.log4j.Logger;
 import org.jnativehook.GlobalScreen;
 import org.jnativehook.NativeHookException;
-import org.jnativehook.example.NativeHookDemo;
 
 import com.automatic.click.service.GlobalKeyListener;
 import com.automatic.click.service.TaskAutomateClick;
@@ -40,6 +39,8 @@ public class App extends Application {
 	private Label label;
 
 	final static Logger logger = Logger.getLogger(App.class);
+	
+	
 
 	private static Stage stage;
 
@@ -61,12 +62,18 @@ public class App extends Application {
 		primaryStage.setTitle(AppConstants.AUTOMATE_CLICK);
 		primaryStage.setScene(scene);
 		primaryStage.show();
-		logger.info(AppConstants.AUTOMATE_CLICK + AppConstants.READ + AppConstants.SUCESSFULLY);
+		logger.info(AppConstants.AUTOMATE_CLICK + AppConstants.SUCESSFULLY + AppConstants.READ);
 		primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
 
 			@Override
 			public void handle(WindowEvent event) {
+				try {
+					GlobalScreen.unregisterNativeHook();
+				} catch (NativeHookException e) {
+					logger.info(e);
+				}
 				logger.info(AppConstants.AUTOMATE_CLICK + AppConstants.CLOSED);
+				
 			}
 		});
 	}
@@ -100,7 +107,7 @@ public class App extends Application {
 	@FXML
 	private void keyPressed(KeyEvent keyEvent) throws IOException {
 		if (keyEvent.getCode() == KeyCode.P) {
-			logger.info(AppConstants.P_KEY + AppConstants.PRESSED);
+			logger.info(AppConstants.P_KEY.toString() + AppConstants.PRESSED);
 			stop();
 		}
 	}
