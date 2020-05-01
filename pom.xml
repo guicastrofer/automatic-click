@@ -4,11 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.automatic.click</groupId>
-	<artifactId>automate-click</artifactId>
+	<artifactId>automatic-click</artifactId>
+
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>automate-click</name>
+	<name>automatic-click</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -51,7 +52,7 @@
 							<transformers>
 								<transformer
 									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>com.automatic.click.Application</mainClass>
+									<mainClass>com.automatic.click.controllers.Application</mainClass>
 								</transformer>
 							</transformers>
 						</configuration>
@@ -77,6 +78,12 @@
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-fxml</artifactId>
 			<version>11</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.1stleg</groupId>
+			<artifactId>jnativehook</artifactId>
+			<version>2.0.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openjfx</groupId>
