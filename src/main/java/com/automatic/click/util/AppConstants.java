@@ -4,7 +4,7 @@ import javafx.scene.input.KeyCode;
 
 public class AppConstants {
 	
-	public static final String P_KEY=KeyCode.P.toString();
+	public static final String P_KEY=KeyCode.P.toString()+" ";
 	
 	public static final String PATH_FXHTML="/view/File.fxml";
 	
