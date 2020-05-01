@@ -1,4 +1,4 @@
-package com.automatic.click;
+package com.automatic.click.controllers;
 
 public class Application {
 
